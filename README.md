@@ -25,14 +25,12 @@ gce-10acre-ranch Usage:
            rhel-6 (Servers only. Config is manual)
            rhel-7 (Servers only. Config is manual)
            coreos-<version>
-           coreos-stable
+           coreos (stable)
            debian-7-backports
            fedora-21 (Rancher Labs Only)
            ubuntu-<version>
     -p - privileged (needed for fedora)
         - server
-        - agent
-        - all
     -q - Do not prompt user
     -r - Registration url
 ```

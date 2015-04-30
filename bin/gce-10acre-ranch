@@ -42,8 +42,6 @@ gce-10acre-ranch Usage:
            ubuntu-<version>
     -p - privileged (needed for fedora)
         - server
-        - agent
-        - all
     -q - Do not prompt user
     -r - Registration url
 EOF
@@ -52,6 +50,7 @@ EOF
 WAIT=true
 INSTANCE_COUNT=3
 OS_FAMILY=ubuntu-14-04
+PRIVILEGED_AGENT="true"
 
 while getopts ":a:bc:de:hiln:o:p:qr:s:w" opt;do
     case $opt in
@@ -92,13 +91,6 @@ while getopts ":a:bc:de:hiln:o:p:qr:s:w" opt;do
         case $OPTARG in
             "server")
                 PRIVILEGED_MASTER="true"
-                ;;
-            "agent")
-                PRIVILEGED_AGENT="true"
-                ;;
-            "all")
-                PRIVILEGED_MASTER="true"
-                PRIVILEGED_AGENT="true"
                 ;;
             * )
                 print_help
